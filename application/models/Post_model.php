@@ -22,6 +22,14 @@
       $query = $this->db->get_where('quiz', array('quiz_no' => $qn));
       return $query->result_array();
     }
+
+    public function get_quiz_by_id($id){
+
+      $query = $this->db->get_where('quiz', array('quiz_id' => $id));
+      return $query->row_array();
+    }
+
+
     public function delete_quiz($qn){
 
       $query = $this->db->delete('quiz', array('quiz_id' => $qn));

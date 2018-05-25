@@ -77,6 +77,11 @@
         $this->Post_model->delete_quiz($this->input->post('quizid'));
         $data['quiz']= $this->Post_model->get_quiz($qn);
       }
+      else if($page=='quizscore'){
+        $qn=$this->input->post('quizno');
+        $data['quizno']= $qn;
+
+      }
 
 
 

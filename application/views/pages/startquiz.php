@@ -34,10 +34,10 @@
                                            echo form_open('pages/quizscore', $attributes) ?>
                                             <?php
                                               $qnn="";
-                                              $i=1;
+                                              $i=0;
                                               foreach ($quiz as $quizs) {
                                                 echo '
-                                                <p><span>Q '.$i++.'</span> ';
+                                                <p><span>Q '.++$i.'</span> ';
                                                 echo $quizs['quiz_q'];
                                                 $qnn=$quizs['quiz_no'];
                                                 echo '
@@ -51,6 +51,7 @@
                                                   <input type="radio"   name="ans'.$i.'" value="'.$quizs['quiz_op4'].'" id="radio_'.$i."4".'" class="radio-col-blue">
                                                   <label for="radio_'.$i."4".'" ><span>D</span> '.$quizs['quiz_op4'].'</label>
                                                   <input type="hidden" name="cans'.$i.'" value="'.$quizs['quiz_ans'].'">
+                                                  <input type="hidden" name="quiz_id'.$i.'" value="'.$quizs['quiz_id'].'">
 
                                                 </div>
                                                 <hr>';
