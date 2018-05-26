@@ -20,16 +20,51 @@
           <div class="col-12">
               <div class="card">
                   <div class="card-body">
+
+
+                    <?php
+
+
+
+                    if ($score<=70) {
+                      echo '  <div class="alert alert-danger" style="margin-bottom:0px">
+
+
+                                              <h2 class="text-success"><i class="fa fa-check-circle"></i> Module '.$this->input->post('quizno').' Reviw Quiz</h2>
+                                              <h4 style="color:red;"> <i class="fa fa-times"></i> '.$point.'/20 points earned ('.$score.' %)</h4>
+                                               You have not pass yet. You need at least 70% to pass. Review the material and try again! You have 3 attemps every 8 hour.
+                                              </br></br>
+                                              <input type="hidden" name="quizno" value="1">
+                                              <div style="text-align:center">
+                                              <a  href="quiz?no='.$this->input->post('quizno').'" class="btn waves-effect waves-light btn-success"> Finish</a>
+                                            </div>
+                        </div>';
+
+                    }
+                    else {
+                      echo '  <div class="alert alert-success" style="margin-bottom:0px; ">
+
+
+                                              <h2 class="text-success"><i class="fa fa-check-circle"></i> Module '.$this->input->post('quizno').' Reviw Quiz</h2>
+                                              <h4 style="color:green;"> <i class="fa fa-check-circle"> </i> '.$point.'/20 points earned ('.$score.' %)</h4>
+                                               Congratulation! You passed the quiz.
+                                              </br></br>
+                                              <input type="hidden" name="quizno" value="1">
+                                              <div style="text-align:center">
+                                              <a  href="quiz?no='.$this->input->post('quizno').'" class="btn waves-effect waves-light btn-success"> Finish</a>
+                                            </div>
+                        </div>';
+                    }
+
+
+                    ?>
+
+
+
                     <div class="alert alert-info" >
 
 
 
-                                        <h3 class="text-info" style="text-align:center">Quiz</h3>
-
-
-                                          <?php
-                                          $attributes = array('id' => 'myform' ,'method'=>'post','name'=>'myform');
-                                           echo form_open('pages/quizscore', $attributes) ?>
                                             <?php
 
                                               $i=1;
@@ -49,12 +84,12 @@
                                                 else {
                                                   echo '<br><br><button type="button" class="btn btn-success  btn-sm btn-circle"> <i class="fa fa-check"></i> </button>&emsp;Answer: '.$ans;
                                                 }
-                                            
+
                                                 echo "<br><br><hr>";
                                               }
                                              ?>
                                             <div style="text-align:center">
-                                                <button type="submit"  class="btn btn-success" >Submit</button>
+
                                             </div>
                     </div>
                   </div>

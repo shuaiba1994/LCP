@@ -157,7 +157,7 @@
                                 <li><a href="history">History and Evolution</a></li>
                                 <li><a href="howworks">How It Works</a></li>
                                 <li><a href="tools">Tools and Tips</a></li>
-                                <li><a href="quiz">Quiz</a></li>
+                                <li><a href="quiz?no=1">Quiz</a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="fa fa-calendar"></i><span class="hide-menu">Week 2</span></a>

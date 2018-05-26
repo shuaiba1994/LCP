@@ -53,12 +53,14 @@
                                                   <input type="hidden" name="cans'.$i.'" value="'.$quizs['quiz_ans'].'">
                                                   <input type="hidden" name="quiz_id'.$i.'" value="'.$quizs['quiz_id'].'">
 
+
                                                 </div>
                                                 <hr>';
                                               }
                                              ?>
                                             <div style="text-align:center">
                                               <input type="hidden" name="quizno" value="<?=$qnn?>">
+                                              <input type="hidden" name="quiz_time" id="time" >
                                                 <button type="submit"  class="btn btn-success" >Submit</button>
                                             </div>
                     </div>
@@ -69,6 +71,7 @@
       <script>
       var minutesLabel = document.getElementById("minutes");
       var secondsLabel = document.getElementById("seconds");
+      var minutesInput = document.getElementById("time");
       var totalSeconds = 1200;
       setInterval(setTime, 1000);
 
@@ -79,6 +82,7 @@
         --totalSeconds;
         secondsLabel.innerHTML = pad(totalSeconds % 60);
         minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+        minutesInput.value=totalSeconds / 60;
         if(totalSeconds<120){
           secondsLabel.style.color="red";
           minutesLabel.style.color="red";

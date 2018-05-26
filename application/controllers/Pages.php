@@ -79,7 +79,21 @@
       }
       else if($page=='quizscore'){
         $qn=$this->input->post('quizno');
+        $time=$this->input->post('quiz_time');
         $data['quizno']= $qn;
+        $i=1;
+        $score=0;
+        for($i=1; $i<=20 ; $i++) {
+          $ans='ans'.$i;
+          $cans='cans'.$i;
+          if($this->input->post($ans)==$this->input->post($cans)){
+            $score++;
+
+          }
+
+        }
+        $data['point']=$score;
+        $data['score']=round( $score*4.75 + ($time/4));
 
       }
 
